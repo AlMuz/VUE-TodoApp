@@ -5,7 +5,17 @@ Vue.use(Vuex);
 
 
 const store = new Vuex.Store({
-  state: {}
+  state: {
+    todos: []
+  },
+  mutations: {
+    addTodo(state, payload) {
+      state.todos = [
+        ...state.todos,
+        payload
+      ]
+    }
+  }
 });
 
 export default store

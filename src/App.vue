@@ -1,27 +1,24 @@
 <template>
   <div id="app">
-    <input v-model="todo" @keyup.enter="saveTodo" type="text" placeholder="Todo item">
-    <ul>
-      <li v-for="(todoItem, index) in todos" :key="index">{{ todoItem }}</li>
-    </ul>
+    <CreateTodo />
+    <ListTodos />
+    <TodosCount />
   </div>
 </template>
 
 <script>
 
+import TodosCount from './components/TodosCount.vue'
+import CreateTodo from './components/CreateTodo.vue'
+import ListTodos from './components/ListTodos.vue'
+
 export default {
   name: 'app',
-  data: () => ({
-    todos: [],
-    todo: ''
-  }),
-  methods : {
-    saveTodo() {
-      this.todos = [
-        ...this.todos,
-        this.todo
-      ]
-    }
+
+  components: {
+    TodosCount,
+    CreateTodo,
+    ListTodos
   }
 }
 </script>
