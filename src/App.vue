@@ -14,11 +14,13 @@ import ListTodos from './components/ListTodos.vue'
 
 export default {
   name: 'app',
-
   components: {
     TodosCount,
     CreateTodo,
     ListTodos
+  },
+  mounted() {
+    this.$store.dispatch('getTodos')
   }
 }
 </script>

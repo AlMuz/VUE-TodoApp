@@ -9,8 +9,9 @@ export default {
   }),
   methods : {
     saveTodo() {
-      // make a commit to the vuex store
-      this.$store.commit('addTodo', this.todo);
+      // if commit - mutations
+      // if dispatch - actions
+      this.$store.dispatch('addTodo', this.todo);
     }
   }
 }
